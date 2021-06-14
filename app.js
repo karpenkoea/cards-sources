@@ -5,25 +5,29 @@ function pluginSlide(activeSlide = 0) {
 
     slides[activeSlide].classList.add('active');
 
-    const clearActiveClasses = () => {
+    function clearActiveClasses() {
         slides.forEach((slide) => {
             slide.classList.remove('active');
+            slide.classList.remove('white');
         });
-    };
 
-    slides.forEach((slide, index) => {
-        slide.addEventListener('click', (e) => {
-            clearActiveClasses();
-            slide.classList.add('active');
-            slide.classList.toggle('disabled');
-        });
-    });
+    }
 
     for (const slide of slides) {
-        slide.addEventListener('click', (e) => {
+        slide.addEventListener('click', () => {
             clearActiveClasses();
             slide.classList.add('active');
-            slide.classList.add('disabled');
+        });
+
+        
+    }
+
+    for (const slide of slides) {
+        slide.addEventListener('mouseover', () => {
+            slide.classList.add('white');
+        });
+        slide.addEventListener('mouseleave', () => {
+            slide.classList.remove('white');
         });
     }
 }

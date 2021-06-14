@@ -28,6 +28,7 @@ body {
   cursor: pointer;
   color: #fff;
   flex: 1;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,10 +38,6 @@ body {
   
 }
 
-.slide:hover {
-  opacity: .8;
-  transition: opacity .1s linear;
-}
 
 .slide h3 {
   position: absolute;
@@ -60,6 +57,7 @@ body {
   transition: opacity 0.3s ease-in 0.4s; 
 }
 
-.disabled {
-  pointer-events: none;  /**<-----------*/
+.white {
+  opacity: .6;
+  transition: opacity .2s;
 }
